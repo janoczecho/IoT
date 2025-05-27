@@ -1,0 +1,258 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      8665,        250]
+NotebookOptionsPosition[      7378,        223]
+NotebookOutlinePosition[      7801,        239]
+CellTagsIndexPosition[      7758,        236]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Wybieramy", " ", "p", " ", "i", " ", "q"}], " ", "*)"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", " ", "=", " ", "61"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"q", " ", "=", " ", "53"}], ";"}], "\n", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Obliczamy", " ", "n", " ", "i", " ", "funkcj\:0119", " ", "Eulera", " ", 
+     "phi", 
+     RowBox[{"(", "n", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"n", " ", "=", " ", 
+     RowBox[{"p", " ", "*", " ", "q"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"phi", " ", "=", " ", 
+     RowBox[{"EulerPhi", "[", "n", "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Losujemy", " ", "e", " ", "spe\[LSlash]niaj\:0105ce", " ", "warunki"}], 
+    " ", "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"eKandydaci", " ", "=", " ", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{"2", ",", " ", 
+         RowBox[{"phi", " ", "-", " ", "1"}]}], "]"}], ",", " ", 
+       RowBox[{
+        RowBox[{"CoprimeQ", "[", 
+         RowBox[{"#", ",", " ", "phi"}], "]"}], " ", "&"}]}], "]"}]}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"e", " ", "=", " ", 
+     RowBox[{"RandomChoice", "[", "eKandydaci", "]"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Obliczamy", " ", "wyk\[LSlash]adnik", " ", "prywatny", " ", "d"}], 
+    "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"d", " ", "=", " ", 
+     RowBox[{"ModularInverse", "[", 
+      RowBox[{"e", ",", " ", "phi"}], "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Definiujemy", " ", "funkcje", " ", "szyfrowania", " ", "i", " ", 
+     "deszyfrowania"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"szyfrowanie", "[", "m_Integer", "]"}], " ", ":=", " ", 
+     RowBox[{"PowerMod", "[", 
+      RowBox[{"m", ",", " ", "e", ",", " ", "n"}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"deszyfrowanie", "[", "c_Integer", "]"}], " ", ":=", " ", 
+     RowBox[{"PowerMod", "[", 
+      RowBox[{"c", ",", " ", "d", ",", " ", "n"}], "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Przyk\[LSlash]ad", " ", "u\:017cycia"}], " ", "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"wiadomosc", " ", "=", " ", "65"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"szyfr", " ", "=", " ", 
+     RowBox[{"szyfrowanie", "[", "wiadomosc", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"rozszyfrowane", " ", "=", " ", 
+     RowBox[{"deszyfrowanie", "[", "szyfr", "]"}]}], ";"}], "\n", "\n", 
+   "\n"}]}]], "Input",
+ CellChangeTimes->{{3.9540651847976513`*^9, 3.9540652142964344`*^9}},
+ CellLabel->"In[53]:=",ExpressionUUID->"74fd7182-3401-444c-a43b-e3f70226b5cf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<p = \>\"", ",", " ", "p"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<q = \>\"", ",", " ", "q"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<n = \>\"", ",", " ", "n"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<phi(n) = \>\"", ",", " ", "phi"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<e (losowe) = \>\"", ",", " ", "e"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<d = \>\"", ",", " ", "d"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<Zaszyfrowana wiadomo\:015b\[CAcute] = \>\"", ",", " ", "szyfr"}], 
+   "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\<Odszyfrowana wiadomo\:015b\[CAcute] = \>\"", ",", " ", 
+     "rozszyfrowane"}], "]"}], ";"}], "\n"}], "\n"}], "Input",
+ CellLabel->"In[65]:=",ExpressionUUID->"89c2e8aa-6409-0645-a9a6-ee17f9257d7b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"p = \"\>", "\[InvisibleSpace]", "61"}],
+  SequenceForm["p = ", 61],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.95406341611372*^9, {3.9540652526987286`*^9, 3.954065257950903*^9}},
+ CellLabel->
+  "During evaluation of \
+In[65]:=",ExpressionUUID->"a8841713-5667-c747-9991-90209e8954ae"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"q = \"\>", "\[InvisibleSpace]", "53"}],
+  SequenceForm["q = ", 53],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.95406341611372*^9, {3.9540652526987286`*^9, 3.954065257956543*^9}},
+ CellLabel->
+  "During evaluation of \
+In[65]:=",ExpressionUUID->"632e1ba0-6651-af4a-ad2b-51a15dbc4204"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n = \"\>", "\[InvisibleSpace]", "3233"}],
+  SequenceForm["n = ", 3233],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.95406341611372*^9, {3.9540652526987286`*^9, 3.954065257965063*^9}},
+ CellLabel->
+  "During evaluation of \
+In[65]:=",ExpressionUUID->"b3ef1b7f-8dbd-cb40-bd44-b0f3351a3b72"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"phi(n) = \"\>", "\[InvisibleSpace]", "3120"}],
+  SequenceForm["phi(n) = ", 3120],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.95406341611372*^9, {3.9540652526987286`*^9, 3.9540652579680614`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[65]:=",ExpressionUUID->"aaaf30be-4eb7-4340-8783-fe37f5e5dd74"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"e (losowe) = \"\>", "\[InvisibleSpace]", "113"}],
+  SequenceForm["e (losowe) = ", 113],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.95406341611372*^9, {3.9540652526987286`*^9, 3.954065257971588*^9}},
+ CellLabel->
+  "During evaluation of \
+In[65]:=",ExpressionUUID->"30343dfd-86a1-cd4e-9737-dff7b8f05143"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"d = \"\>", "\[InvisibleSpace]", "497"}],
+  SequenceForm["d = ", 497],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.95406341611372*^9, {3.9540652526987286`*^9, 3.9540652579759693`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[65]:=",ExpressionUUID->"0d772c78-6215-2246-a9e1-ebefd487501a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Zaszyfrowana wiadomo\:015b\[CAcute] = \"\>", 
+   "\[InvisibleSpace]", "1869"}],
+  SequenceForm["Zaszyfrowana wiadomo\:015b\[CAcute] = ", 1869],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.95406341611372*^9, {3.9540652526987286`*^9, 3.9540652579789734`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[65]:=",ExpressionUUID->"d7328d96-2c56-4f4e-bf80-b9dc1b92beb2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Odszyfrowana wiadomo\:015b\[CAcute] = \"\>", 
+   "\[InvisibleSpace]", "65"}],
+  SequenceForm["Odszyfrowana wiadomo\:015b\[CAcute] = ", 65],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.95406341611372*^9, {3.9540652526987286`*^9, 3.954065257982033*^9}},
+ CellLabel->
+  "During evaluation of \
+In[65]:=",ExpressionUUID->"a84d017c-32c7-4646-893d-64c37c10c799"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1152, 579.6},
+WindowMargins->{{-1157.4, Automatic}, {Automatic, 191.99999999999997`}},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"1a99a8ea-198e-4b46-b861-c43b7836804f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 2744, 73, 607, "Input",ExpressionUUID->"74fd7182-3401-444c-a43b-e3f70226b5cf"],
+Cell[CellGroupData[{
+Cell[3323, 97, 1043, 30, 337, "Input",ExpressionUUID->"89c2e8aa-6409-0645-a9a6-ee17f9257d7b"],
+Cell[CellGroupData[{
+Cell[4391, 131, 343, 9, 22, "Print",ExpressionUUID->"a8841713-5667-c747-9991-90209e8954ae"],
+Cell[4737, 142, 343, 9, 22, "Print",ExpressionUUID->"632e1ba0-6651-af4a-ad2b-51a15dbc4204"],
+Cell[5083, 153, 347, 9, 22, "Print",ExpressionUUID->"b3ef1b7f-8dbd-cb40-bd44-b0f3351a3b72"],
+Cell[5433, 164, 359, 9, 22, "Print",ExpressionUUID->"aaaf30be-4eb7-4340-8783-fe37f5e5dd74"],
+Cell[5795, 175, 363, 9, 22, "Print",ExpressionUUID->"30343dfd-86a1-cd4e-9737-dff7b8f05143"],
+Cell[6161, 186, 347, 9, 22, "Print",ExpressionUUID->"0d772c78-6215-2246-a9e1-ebefd487501a"],
+Cell[6511, 197, 421, 10, 22, "Print",ExpressionUUID->"d7328d96-2c56-4f4e-bf80-b9dc1b92beb2"],
+Cell[6935, 209, 415, 10, 22, "Print",ExpressionUUID->"a84d017c-32c7-4646-893d-64c37c10c799"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
