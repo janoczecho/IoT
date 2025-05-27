@@ -1,0 +1,30 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+TextData[{"Jan"," ","Czechowski"}],"Title",ExpressionUUID -> "d20f9cb9-0c40-4536-ae3f-df13ad3c0d5b"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"Lab"," ","28"}],"Subtitle",ExpressionUUID -> "d82c6a07-61c7-4e26-b5fd-ebd510a8750c"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"7",StyleBox[RowBox[{"."," "}]],"Oblicz"," ","w"," ","Mathematica"," ","pole"," ","powierzchni"," ","powsta\[LSlash]ej"," ","przez"," ","obr\[OAcute]t"," ","funkcji"," ","sin"," ","x"," ","na"," ","przedziale",StyleBox[
+RowBox[{" ","["," ","\[Pi]"," ","/"}]],"4",StyleBox[RowBox[{" ",","," "}]],"7",StyleBox[
+RowBox[{"\[Pi]/"," "}]],"4",StyleBox[RowBox[{" ","]"," "}]],"wok\[OAcute]\[LSlash]"," ","osi"," ","OX"}],
+"Section",ExpressionUUID -> "cc1a8970-4504-4564-8a6d-de9c4d6306eb"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"f","[","x_","]"}]," ",":="," ",RowBox[{"Sin","[","x","]"}]}],"\n",RowBox[
+{RowBox[{"fPochodna","[","x_","]"}]," ",":="," ",RowBox[{"D","[",RowBox[{RowBox[{"f","[","x","]"}],","," ","x"}],"]"}]}],"\n",RowBox[
+{"PolePowierzchni"," ","="," ",RowBox[{"NIntegrate","[",RowBox[{RowBox[{"2"," ","Pi"," ",RowBox[
+{"Abs","[",RowBox[{"f","[","x","]"}],"]"}]," ",RowBox[{"Sqrt","[",RowBox[{RowBox[
+{RowBox[{"(",RowBox[{"fPochodna","[","x","]"}],")"}],"^","2"}]," ","+"," ","1"}],"]"}]}],","," ",RowBox[
+{"{",RowBox[{"x",","," ",RowBox[{"Pi","/","4"}],","," ",RowBox[{"7"," ",RowBox[{"Pi","/","4"}]}]}],"}"}]}],"]"}]}]}],
+"Input",CellLabel -> "In[24]:= ",ExpressionUUID -> "0de32409-8915-4f0c-be88-261ef2ed6f3f"],Cell[
+BoxData[
+"24.002342795175117`",StandardForm],"Output",CellLabel -> "Out[26]= ",ExpressionUUID -> "832ed7b3-a170-44d1-87af-89634da4bfef"]},
+Open],ExpressionUUID -> "33c6bfd3-8e76-42e5-a024-dbe4176c3a5b"],Cell[
+TextData[{"Pole"," ","powierzchni"," ","powsta\[LSlash]ej"," ","przez"," ","obr\[OAcute]t"," ","funkcji"," ","sin"," ","x"," ","na"," ","przedziale",StyleBox[
+RowBox[{" ","["," ","\[Pi]"," ","/"}]],"4",StyleBox[RowBox[{" ",","," "}]],"7",StyleBox[
+RowBox[{"\[Pi]/"," "}]],"4",StyleBox[RowBox[{" ","]"," "}]],"wok\[OAcute]\[LSlash]"," ","osi"," ","OX"," ","wynosi"," ","24",".","0023"}],
+"Text",ExpressionUUID -> "b463c64b-7679-4c60-9b0b-081918acbae3"]},Open],ExpressionUUID -> "0b7abed1-13f5-45a8-a373-c63060567e63"]},
+Open],ExpressionUUID -> "3376eef4-a2ff-4421-bd31-3432f345e29a"]},Open],ExpressionUUID -> "b0898ded-7535-474c-b1e4-a891d2c78451"]},
+StyleDefinitions -> "Default.nb",FrontEndVersion -> "14.1 for Wolfram Cloud 1.70 (December 4, 2024)"]

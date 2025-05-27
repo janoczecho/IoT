@@ -1,0 +1,101 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+TextData[{"Lab"," ","18",StyleBox[RowBox[{":"," "}]],"Optymalizacja",StyleBox[
+RowBox[{","," "}]],"cz",StyleBox[RowBox[{"."," "}]],"2"}],"Title",ExpressionUUID -> "7d4faea4-7daa-4018-acca-bf628ffe096b"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"Jan"," ","Czechowski"}],"Subtitle",ExpressionUUID -> "8a1a4f67-f11a-4b59-852d-364b8d70bd5c"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"Przyklad"," ","1"}],"Section",ExpressionUUID -> "16d5415d-00a1-4c8c-96bf-8c64ed8501bc"],Cell[
+TextData[
+{"a",")"}],"Subchapter",ExpressionUUID -> "f3d6d054-5a24-4a9a-810f-50664658ab38"],Cell[
+BoxData[
+RowBox[{"d"," ",":="," ","10"," ",RowBox[{"(*","cm","*)"}]}]],"Input",CellLabel -> "In[17]:= ",
+ExpressionUUID -> "7690b3f8-599c-498d-9553-ef43882607d6"],Cell[
+BoxData[RowBox[{" ",RowBox[
+{RowBox[{"ObwodKwadratu","[","x_","]"}],":=",RowBox[{"d","-","x"}]}]}]],"Input",CellLabel -> "In[18]:= ",
+ExpressionUUID -> "82989a93-cccb-4793-83e9-a7ba95203347"],Cell[
+BoxData[RowBox[{RowBox[
+{"Promien","[","x_","]"}],":=",RowBox[{RowBox[{"ObwodKwadratu","[","x","]"}],"/",RowBox[
+{"(",RowBox[{"2","*","Pi"}],")"}]}]}]],"Input",CellLabel -> "In[19]:= ",ExpressionUUID -> "baff4ea4-746b-4cc2-aa74-2e44513c3090"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"Promien","[","x","]"}]],"Input",CellLabel -> "In[20]:= ",
+ExpressionUUID -> "b4bd55ea-3205-4dbd-9417-99272e603cc0"],Cell[
+BoxData[FractionBox[
+RowBox[{"10","-","x"}],RowBox[{"2"," ","\[Pi]"}]],StandardForm],"Output",CellLabel -> "Out[20]= ",
+ExpressionUUID -> "f4aaa025-0214-43ee-a799-46b07f7657ea"]},Open],ExpressionUUID -> "342fabbe-7caa-4183-9cfa-39366cd4eb53"],Cell[
+TextData[
+{"b",")"}],"Subchapter",ExpressionUUID -> "fbee26db-2abe-4e09-bdfc-5123e43c9647"],Cell[
+BoxData[
+RowBox[{RowBox[{"SumaPol","[","x_","]"}]," ",":="," ",RowBox[{RowBox[{RowBox[{"x","^","2"}],"/","16"}]," ","+"," ",RowBox[
+{RowBox[{RowBox[{"(",RowBox[{"10"," ","-"," ","x"}],")"}],"^","2"}],"/",RowBox[{"(",RowBox[
+{"4"," ","Pi"}],")"}]}]}]}]],"Input",CellLabel -> "In[44]:= ",ExpressionUUID -> "2d15d665-9310-4d61-bb0c-af5453f6db6a"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"SumaPol","'"}],"[","x","]"}]],"Input",CellLabel -> "In[46]:= ",
+ExpressionUUID -> "ede1ce5a-05cd-4873-b086-e6c9dc31f235"],Cell[
+BoxData[RowBox[{RowBox[
+{"-",FractionBox[RowBox[{"10","-","x"}],RowBox[{"2"," ","\[Pi]"}]]}],"+",FractionBox[
+"x","8"]}],StandardForm],"Output",CellLabel -> "Out[46]= ",ExpressionUUID -> "524a6f73-4a09-4ea7-9b80-365949f4fa14"]},
+Open],ExpressionUUID -> "6f4afbb8-b024-49e3-8d7f-61da823b728d"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"Reduce","[",RowBox[{RowBox[{RowBox[{"ObwodKwadratu","[","x","]"}],"\[GreaterEqual]","0"}],",","x"}],"]"}]],
+"Input",CellLabel -> "In[53]:= ",ExpressionUUID -> "2b0b4e7a-97b6-4bff-a116-fc1302f84e57"],Cell[
+BoxData[
+RowBox[{"x","\[LessEqual]","10"}],StandardForm],"Output",CellLabel -> "Out[53]= ",
+ExpressionUUID -> "7966637a-e717-44b5-bedc-00df4697f056"]},Open],ExpressionUUID -> "3e86bf12-b9c9-4375-8a93-be6b60123d54"],Cell[
+TextData[
+{"Dziedzina",StyleBox[RowBox[{":"," "," "}]],"x",StyleBox[RowBox[{" ","\[Element]["}]],"0",",","10","]"}],
+"Text",ExpressionUUID -> "48ec3865-803b-4441-800f-31ca6c719b4b"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"PunktyKrytyczne","=",RowBox[{"N","[",RowBox[{RowBox[{"Simplify","[",RowBox[
+{"Solve","[",RowBox[{RowBox[{RowBox[{RowBox[{RowBox[{"SumaPol","'"}],"[","x","]"}],"==","0"}]," ","&&"," ",RowBox[
+{"0"," ","\[LessEqual]"," ","x"}]," ","&&"," ",RowBox[{"x"," ","\[LessEqual]","10"}]}],","," ","x"}],"]"}],"]"}],",","3"}],"]"}]}]],
+"Input",CellLabel -> "In[58]:= ",ExpressionUUID -> "0dce9114-5733-4524-a61e-8929319ad47d"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"{",RowBox[{"x","\[Rule]","5.6009915351155737588`3."}],"}"}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[58]= ",ExpressionUUID -> "24f6c7d0-8be4-4800-9499-155a45437a76"]},
+Open],ExpressionUUID -> "f66f0951-d5d4-4419-baaf-e8252683dccc"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"WartosciNaPunktachKoncowych"," ","="," ",RowBox[{"N","[",RowBox[
+{RowBox[{"{",RowBox[{RowBox[{"SumaPol","[","0","]"}],",",RowBox[{"SumaPol","[","10","]"}]}],"}"}],",","3"}],"]"}]}]],
+"Input",CellLabel -> "In[57]:= ",ExpressionUUID -> "34bf2dfc-84c5-414b-bf03-850ca5b31bee"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"7.9577471545947667885`3.",",","6.25`3."}],"}"}],StandardForm],
+"Output",CellLabel -> "Out[57]= ",ExpressionUUID -> "ff988730-1e20-4dcb-9f8f-6aa859f5b958"]},
+Open],ExpressionUUID -> "47a827ab-7ab8-499d-a933-a8d7d52f09f1"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"WartoscWPunktachKrytycznych"," ","="," ",RowBox[{RowBox[{"S","[","x","]"}],"/.","PunktyKrytyczne"}]}]],
+"Input",CellLabel -> "In[61]:= ",ExpressionUUID -> "830b954b-ac6a-437b-b07a-34d2ceb33c1f"],Cell[
+BoxData[
+RowBox[{"{","3.5006197094472335994`2.6496750923602645","}"}],StandardForm],"Output",
+CellLabel -> "Out[61]= ",ExpressionUUID -> "df7b078d-75b1-4458-9b2a-46d366927f75"]},
+Open],ExpressionUUID -> "17fbc69f-3a9b-443b-a570-b58490f87308"],Cell[
+TextData[{"c",")"}],
+"Subchapter",ExpressionUUID -> "6d9597e0-d45c-4796-ab22-536cef760f26"],Cell[
+BoxData[
+RowBox[{"wartosci"," ",":=",RowBox[{"Join","[",RowBox[{"WartosciNaPunktachKoncowych",",","WartoscWPunktachKrytycznych"}],"]"}]}]],
+"Input",CellLabel -> "In[62]:= ",ExpressionUUID -> "3ce7c624-0117-4560-b677-8add7d0850c1"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"maksimum"," ","="," ",RowBox[{"Max","[","wartosci","]"}]}]],
+"Input",CellLabel -> "In[63]:= ",ExpressionUUID -> "b75c02a1-cb6f-421a-8e26-94873dfd8c44"],Cell[
+BoxData[
+"7.9577471545947667885`3.",StandardForm],"Output",CellLabel -> "Out[63]= ",ExpressionUUID -> "48c7e371-1d07-4cd7-aaac-aa1036047d17"]},
+Open],ExpressionUUID -> "d3075830-fc3d-4def-973b-df4e2c1813fe"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"minimum","=",RowBox[{"Min","[","wartosci","]"}]}]],"Input",
+CellLabel -> "In[64]:= ",ExpressionUUID -> "71ea675e-a7c8-4102-b98d-583f2a73dbf6"],Cell[
+BoxData[
+"3.5006197094472335994`2.6496750923602645",StandardForm],"Output",CellLabel -> "Out[64]= ",
+ExpressionUUID -> "2c30a7a3-05c5-451d-8cd6-c5f09015b607"]},Open],ExpressionUUID -> "0dd08b27-9a8f-41d8-9e77-b041c1212772"]},
+Open],ExpressionUUID -> "30a66f74-4785-4f23-ac06-8f68640c9bb5"]},Open],ExpressionUUID -> "76c8d7f8-1eb0-4084-a0a7-f2f6d9340038"]},
+Open],ExpressionUUID -> "9d18ca4f-54d7-488f-a5c0-f172c83adb1a"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "14.1 for Wolfram Cloud 1.70 (October 17, 2024)"]

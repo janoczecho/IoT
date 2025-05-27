@@ -1,0 +1,237 @@
+# Odpowiedzi na pytania kontrolne – moduły i systemy Internetu Rzeczy
+
+## Arduino i moduły MPU
+
+### 1. Charakterystyczne cechy płytki Arduino Uno, zalety i wady
+**Cechy Arduino Uno**:  
+- Mikrokontroler: ATmega328P (8-bitowy, 16 MHz).  
+- Wejścia/wyjścia: 14 cyfrowych (6 z PWM), 6 analogowych.  
+- Pamięć: 32 KB Flash, 2 KB SRAM, 1 KB EEPROM.  
+- Zasilanie: 5V (USB lub 7-12V zewnętrzne).  
+
+**Zalety**:  
+- Prostota obsługi, bogata dokumentacja.  
+- Duża społeczność i biblioteki.  
+- Niski koszt.  
+
+**Wady**:  
+- Brak Wi-Fi/Bluetooth.  
+- Niska moc obliczeniowa.  
+- Konieczność konwersji napięć 5V ↔ 3.3V.  
+
+---
+
+### 2. Budowa i komponenty modułów MCU  
+**Główne komponenty**:  
+- CPU, RAM, pamięć Flash/EEPROM.  
+- Interfejsy: UART, I2C, SPI, USB.  
+- GPIO, PWM, ADC, DAC.  
+
+**Kryteria wyboru MCU**:  
+- Moc obliczeniowa i pobór mocy.  
+- Obsługiwane interfejsy (np. Wi-Fi).  
+- Pamięć (RAM/Flash).  
+- Napięcie robocze (3.3V/5V).  
+
+---
+
+### 3. Parametry mikrokontrolerów. Kiedy stosować ESP8266/NodeMCU?  
+**ESP8266**:  
+- Procesor: Tensilica L106 (80 MHz).  
+- Pamięć: 160 KB RAM, 512 KB – 4 MB Flash.  
+- Interfejsy: Wi-Fi, UART, SPI, I2C.  
+
+**Zastosowanie**:  
+- Systemy IoT z Wi-Fi (inteligentne domy, czujniki zdalne).  
+
+---
+
+### 4. Konwerter stanów logicznych – sposób działania  
+- Dopasowuje napięcia między układami (np. 5V ↔ 3.3V).  
+- Metody: dzielniki napięcia, tranzystory MOSFET.  
+
+---
+
+### 5. Moduł ESP8266 – parametry  
+- Procesor: 32-bitowy, 80 MHz.  
+- Porty: 11 GPIO, 1x ADC.  
+- Komunikacja: Wi-Fi, UART, SPI.  
+
+---
+
+### 6. Sygnał PWM  
+- Zastosowanie: sterowanie jasnością LED, prędkością silników.  
+- Piny PWM w Arduino Uno: 3, 5, 6, 9, 10, 11.  
+
+---
+
+## Czujniki i moduły
+
+### 1. Czym są czujniki?  
+Przetwarzają wielkości fizyczne (temperatura, ciśnienie) na sygnały elektryczne.  
+
+---
+
+### 2. Rodzaje czujników temperatury  
+- Termopary (efekt Seebecka).  
+- Termistory NTC/PTC.  
+- Termorezystory (RTD, np. PT100).  
+
+---
+
+### 3. Działanie termopary, termistora, termorezystora  
+- **Termopara**: napięcie zależne od temperatury dwóch metali.  
+- **Termistor**: nieliniowa zmiana rezystancji.  
+- **RTD**: liniowa zmiana rezystancji (np. platyna).  
+
+---
+
+### 4. Czujnik temperatury do pomiaru ciała  
+- **DHT22**: ±0.5°C, zakres -40–80°C.  
+- **DS18B20**: precyzyjny, interfejs cyfrowy.  
+
+---
+
+### 5. Charakterystyka termorezystorów  
+- **RTD**: liniowa zależność \( R(T) \).  
+- **Termistory**: nieliniowa zależność.  
+
+---
+
+### 6. DHT11 vs. DHT22  
+| Parametr       | DHT11          | DHT22          |  
+|----------------|----------------|----------------|  
+| Zakres temp.   | 0–50°C         | -40–80°C       |  
+| Dokładność     | ±2°C           | ±0.5°C         |  
+| Cena           | Niższa         | Wyższa         |  
+
+---
+
+## Czujnik odległości
+
+### 7. Metody pomiaru odległości  
+- Ultradźwięki (HC-SR04).  
+- Laser (LIDAR).  
+- Podczerwień (Sharp GP2Y0A).  
+
+---
+
+### 8. Sposoby mierzenia odległości  
+1. **ToF (Time of Flight)** – np. LIDAR.  
+2. Triangulacja optyczna.  
+3. Zmiany pojemnościowe.  
+
+---
+
+### 9. Podłączenie HC-SR04 do Arduino  
+- VCC → 5V, GND → GND.  
+- Trigger i Echo → piny cyfrowe.  
+
+---
+
+## Inne czujniki i moduły
+
+### 10. Czujnik ruchu PIR  
+- Wykrywa zmiany promieniowania podczerwonego.  
+- Zasięg: 5–10 metrów.  
+
+---
+
+### 11. Serwomechanizm  
+- Elementy: silnik DC, potencjometr, PWM.  
+- Podłączenie: 5V, GND, pin PWM.  
+
+---
+
+## Energia i zasilanie
+
+### 12. Energia fotowoltaiczna  
+- MPPT: optymalizuje punkt mocy.  
+- Punkt pracy: maksymalna moc z panelu.  
+
+---
+
+### 13. Źródła energii  
+- Odnawialne: słońce, wiatr.  
+- Nieodnawialne: węgiel, ropa.  
+
+---
+
+### 14. Energy harvesting  
+- Panele słoneczne.  
+- Ogniwa Peltiera (różnice temperatur).  
+- Piezoelektryczność (drgania).  
+
+---
+
+## Komunikacja bezprzewodowa
+
+### 15. Protokół LoRa/LoRaWAN  
+- Zasięg: kilkanaście km.  
+- Zastosowanie: rolnictwo, smart cities.  
+
+---
+
+### 16. Bluetooth vs LoRa  
+| Cecha          | Bluetooth      | LoRa           |  
+|----------------|----------------|----------------|  
+| Zasięg         | 10–100m        | 10–15 km       |  
+| Zużycie energii| Średnie        | Niskie         |  
+
+---
+
+### 17. NFC  
+- Zasięg: ~10 cm.  
+- Zastosowania: płatności mobilne, kontrola dostępu.  
+
+---
+
+### 18. Wi-Fi vs Bluetooth  
+| Cecha          | Wi-Fi          | Bluetooth      |  
+|----------------|----------------|----------------|  
+| Prędkość       | Wysoka         | Średnia        |  
+| Zasięg         | Do 100m        | Do 10m         |  
+
+---
+
+## Nawigacja satelitarna
+
+### 19. Błędy GNSS  
+- Atmosferyczne (jonosfera).  
+- Geometryczne (DOP).  
+- Błędy zegara satelity.  
+
+---
+
+### 20. Systemy GNSS  
+- GPS (USA), GLONASS (Rosja), Galileo (UE), BeiDou (Chiny).  
+
+---
+
+### 21. GNSS vs GPS  
+- **GNSS**: ogólna nazwa systemów.  
+- **GPS**: konkretny system amerykański.  
+
+---
+
+### 22. Zastosowania nawigacji  
+- Transport, rolnictwo, geodezja, ratownictwo.  
+
+---
+
+### 23. Dlaczego wiele systemów GNSS?  
+- Redundancja, precyzja, niezależność polityczna.  
+
+---
+
+## Wybrane tematy projektowe
+
+### 24. Podłączenie przycisku do ESP8266  
+- Przycisk między GPIO a GND.  
+- Kod: `digitalRead()` z `INPUT_PULLUP`.  
+
+---
+
+### 25. Metody lutowania  
+- Lutowanie: kolbowe, hot air.  
+- Odlutowywanie: plecionka miedziana, pompka.  
