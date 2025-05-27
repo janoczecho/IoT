@@ -1,4 +1,4 @@
-# 🎓 My IoT Studies @ Warsaw University of Technology
+# 🎓 My IoT Studies at Warsaw University of Technology
 
 Hey there! 👋  
 This repo is my personal hub for everything related to my **IoT (Internet of Things)** studies at **Warsaw University of Technology (Politechnika Warszawska)**.
