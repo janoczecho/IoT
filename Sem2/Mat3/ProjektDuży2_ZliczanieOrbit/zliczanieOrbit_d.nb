@@ -1,0 +1,2537 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[    100708,       2527]
+NotebookOptionsPosition[     97799,       2482]
+NotebookOutlinePosition[     98232,       2499]
+CellTagsIndexPosition[     98189,       2496]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Numeracja", " ", 
+      RowBox[{"wierzcho\[LSlash]k\[OAcute]w", ":", "1"}]}], "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], ",", 
+    RowBox[{"2", "->", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], ",", 
+    RowBox[{"3", "->", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], ",", 
+    RowBox[{"4", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], ",", 
+    RowBox[{"5", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", 
+    RowBox[{"6", "->", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", 
+    RowBox[{"7", "->", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], ",", 
+    RowBox[{"8", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1", ",", "1"}], "}"}]}]}], "*)"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{"===", 
+    RowBox[{
+    "1.", " ", "Generatory", " ", "obrot\[OAcute]w", " ", "o", " ", "90", 
+     "\[Degree]"}], "==="}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"obr\[OAcute]tZ", "=", 
+     RowBox[{"Cycles", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"5", ",", "6", ",", "7", ",", "8"}], "}"}]}], "}"}], "]"}]}],
+     ";"}], "  ", 
+   RowBox[{"(*", 
+    RowBox[{"obr\[OAcute]t", " ", "wok\[OAcute]\[LSlash]", " ", "Z"}], "*)"}],
+    "\n", 
+   RowBox[{
+    RowBox[{"obr\[OAcute]tY", "=", 
+     RowBox[{"Cycles", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1", ",", "5", ",", "6", ",", "2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"4", ",", "8", ",", "7", ",", "3"}], "}"}]}], "}"}], "]"}]}],
+     ";"}], "  ", 
+   RowBox[{"(*", 
+    RowBox[{"obr\[OAcute]t", " ", "wok\[OAcute]\[LSlash]", " ", "Y"}], "*)"}],
+    "\n", 
+   RowBox[{
+    RowBox[{"obr\[OAcute]tX", "=", 
+     RowBox[{"Cycles", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1", ",", "4", ",", "8", ",", "5"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"2", ",", "3", ",", "7", ",", "6"}], "}"}]}], "}"}], "]"}]}],
+     ";"}], "  ", 
+   RowBox[{"(*", 
+    RowBox[{"obr\[OAcute]t", " ", "wok\[OAcute]\[LSlash]", " ", "X"}], "*)"}],
+    "\n", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"grupa", "=", 
+     RowBox[{"PermutationGroup", "[", 
+      RowBox[{"{", 
+       RowBox[{
+       "obr\[OAcute]tZ", ",", "obr\[OAcute]tY", ",", "obr\[OAcute]tX"}], 
+       "}"}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"elementyGrupy", "=", 
+     RowBox[{"GroupElements", "[", "grupa", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"===", 
+     RowBox[{
+     "2.", " ", "Wszystkie", " ", "kolorowania", " ", "8", " ", 
+      "wierzcho\[LSlash]k\[OAcute]w", " ", 
+      RowBox[{"(", 
+       RowBox[{"0", " ", "i", " ", "1"}], ")"}]}], "==="}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"wszystkieKolorowania", "=", 
+     RowBox[{"Tuples", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1"}], "}"}], ",", "8"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"===", 
+     RowBox[{
+     "3.", " ", "Wyznaczanie", " ", "orbit", " ", "metoda", " ", "BFS"}], 
+     "==="}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"odwiedzoneWszystkie", "=", 
+     RowBox[{"<|", "|>"}]}], ";"}], "  ", 
+   RowBox[{"(*", 
+    RowBox[{"odwiedzone", " ", "kolorowania"}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"reprezentanci", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "          ", 
+   RowBox[{"(*", 
+    RowBox[{"reprezentanci", " ", "orbity"}], "*)"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Do", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"kolorowanie", "=", 
+        RowBox[{"wszystkieKolorowania", "[", 
+         RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"!", 
+          RowBox[{"KeyExistsQ", "[", 
+           RowBox[{"odwiedzoneWszystkie", ",", "kolorowanie"}], "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"orbita", "=", 
+           RowBox[{"<|", "|>"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"kolejka", "=", 
+           RowBox[{"{", "kolorowanie", "}"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"While", "[", 
+           RowBox[{
+            RowBox[{"kolejka", "=!=", 
+             RowBox[{"{", "}"}]}], ",", 
+            RowBox[{
+             RowBox[{"obecne", "=", 
+              RowBox[{"First", "[", "kolejka", "]"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"kolejka", "=", 
+              RowBox[{"Rest", "[", "kolejka", "]"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"!", 
+                RowBox[{"KeyExistsQ", "[", 
+                 RowBox[{"orbita", ",", "obecne"}], "]"}]}], ",", 
+               RowBox[{
+                RowBox[{"AssociateTo", "[", 
+                 RowBox[{"orbita", ",", 
+                  RowBox[{"obecne", "->", "True"}]}], "]"}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"Do", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"nowe", "=", 
+                    RowBox[{"Permute", "[", 
+                    RowBox[{"obecne", ",", 
+                    RowBox[{"InversePermutation", "[", 
+                    RowBox[{"elementyGrupy", "[", 
+                    RowBox[{"[", "j", "]"}], "]"}], "]"}]}], "]"}]}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"!", 
+                    RowBox[{"KeyExistsQ", "[", 
+                    RowBox[{"orbita", ",", "nowe"}], "]"}]}], ",", 
+                    RowBox[{"AppendTo", "[", 
+                    RowBox[{"kolejka", ",", "nowe"}], "]"}]}], "]"}]}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"j", ",", 
+                    RowBox[{"Length", "[", "elementyGrupy", "]"}]}], "}"}]}], 
+                 "]"}], ";"}]}], "]"}], ";"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"reprezentanci", ",", "kolorowanie"}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Do", "[", 
+           RowBox[{
+            RowBox[{"AssociateTo", "[", 
+             RowBox[{"odwiedzoneWszystkie", ",", 
+              RowBox[{"c", "->", "True"}]}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"c", ",", 
+              RowBox[{"Keys", "[", "orbita", "]"}]}], "}"}]}], "]"}], ";"}]}],
+         "]"}], ";"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", 
+        RowBox[{"Length", "[", "wszystkieKolorowania", "]"}]}], "}"}]}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"===", 
+     RowBox[{"4.", " ", "Wy\:015bwietlenie", " ", "wynik\[OAcute]w"}], 
+     "==="}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Liczba nieekwiwalentnych kolorowa\:0144: \>\"", ",", 
+      RowBox[{"Length", "[", "reprezentanci", "]"}]}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+    "Print", "[", 
+     "\"\<Reprezentanci orbity (posortowani wed\[LSlash]ug liczby jedynek):\>\
+\"", "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"posortowaniReprezentanci", "=", 
+     RowBox[{"SortBy", "[", 
+      RowBox[{"reprezentanci", ",", "Total"}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Do", "[", 
+     RowBox[{
+      RowBox[{"Print", "[", 
+       RowBox[{"posortowaniReprezentanci", "[", 
+        RowBox[{"[", "k", "]"}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", 
+        RowBox[{"Length", "[", "posortowaniReprezentanci", "]"}]}], "}"}]}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"===", 
+     RowBox[{
+     "5.", " ", "Funkcja", " ", "rysuj\:0105ca", " ", "sze\:015bcian"}], 
+     "==="}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"RysujSzescian", "[", "kolorowanie_", "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "wierzcholki3D", ",", "sciany", ",", "krawedzieIndeksy", ",", 
+         "scianyPolygon", ",", "krawedzieLines", ",", "kolory"}], "}"}], ",", 
+       RowBox[{
+        RowBox[{"wierzcholki3D", "=", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", 
+             RowBox[{"-", "1"}], ",", 
+             RowBox[{"-", "1"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"-", "1"}], ",", 
+             RowBox[{"-", "1"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "1", ",", 
+             RowBox[{"-", "1"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", "1", ",", 
+             RowBox[{"-", "1"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", 
+             RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", "1", ",", "1"}], "}"}]}], "}"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"sciany", "=", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"5", ",", "6", ",", "7", ",", "8"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "2", ",", "6", ",", "5"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2", ",", "3", ",", "7", ",", "6"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"3", ",", "4", ",", "8", ",", "7"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"4", ",", "1", ",", "5", ",", "8"}], "}"}]}], "}"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"krawedzieIndeksy", "=", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"1", ",", "2"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2", ",", "3"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"3", ",", "4"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"4", ",", "1"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"5", ",", "6"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"6", ",", "7"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"7", ",", "8"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"8", ",", "5"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "5"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2", ",", "6"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"3", ",", "7"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"4", ",", "8"}], "}"}]}], "}"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"scianyPolygon", "=", 
+         RowBox[{"Polygon", "/@", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"wierzcholki3D", "[", 
+              RowBox[{"[", "#", "]"}], "]"}], "&"}], "/@", "sciany"}], 
+           ")"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"krawedzieLines", "=", 
+         RowBox[{"Line", "/@", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"wierzcholki3D", "[", 
+              RowBox[{"[", "#", "]"}], "]"}], "&"}], "/@", 
+            "krawedzieIndeksy"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"kolory", "=", 
+         RowBox[{"kolorowanie", "/.", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"0", "->", "Red"}], ",", 
+            RowBox[{"1", "->", "Blue"}]}], "}"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Graphics3D", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Opacity", "[", "0.1", "]"}], ",", "Gray", ",", 
+              "scianyPolygon"}], "}"}], ",", 
+            RowBox[{"(*", "\:015bciany", "*)"}], 
+            RowBox[{"{", 
+             RowBox[{"Gray", ",", 
+              RowBox[{"Thickness", "[", "0.005", "]"}], ",", 
+              "krawedzieLines"}], "}"}], ",", 
+            RowBox[{"(*", "kraw\:0119dzie", "*)"}], 
+            RowBox[{"MapThread", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"#2", ",", 
+                 RowBox[{"Specularity", "[", 
+                  RowBox[{"White", ",", "50"}], "]"}], ",", 
+                 RowBox[{"Sphere", "[", 
+                  RowBox[{"#1", ",", "0.15"}], "]"}]}], "}"}], "&"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"wierzcholki3D", ",", "kolory"}], "}"}]}], "]"}]}], 
+           "              ", 
+           RowBox[{"(*", "wierzcho\[LSlash]ki", "*)"}], "}"}], ",", 
+          RowBox[{"Boxed", "->", "False"}], ",", 
+          RowBox[{"Lighting", "->", "\"\<Neutral\>\""}], ",", 
+          RowBox[{"ViewPoint", "->", 
+           RowBox[{"{", 
+            RowBox[{"1.3", ",", 
+             RowBox[{"-", "2.4"}], ",", "1.5"}], "}"}]}], ",", 
+          RowBox[{"ImageSize", "->", "150"}]}], "]"}]}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"===", 
+     RowBox[{
+     "6.", " ", "Generowanie", " ", "i", " ", "wy\:015bwietlenie", " ", 
+      "wizualizacji"}], "==="}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"wizualizacje", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Labeled", "[", 
+        RowBox[{
+         RowBox[{"RysujSzescian", "[", 
+          RowBox[{"posortowaniReprezentanci", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", 
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{"\"\<Kolorowanie \>\"", ",", "i"}], "}"}], "]"}], ",", 
+         "Bottom"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", 
+         RowBox[{"Length", "[", "posortowaniReprezentanci", "]"}]}], "}"}]}], 
+      "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"siatka", "=", 
+     RowBox[{"Partition", "[", 
+      RowBox[{"wizualizacje", ",", 
+       RowBox[{"UpTo", "[", "5", "]"}]}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"Grid", "[", 
+      RowBox[{"siatka", ",", 
+       RowBox[{"Frame", "->", "All"}], ",", 
+       RowBox[{"FrameStyle", "->", "LightGray"}]}], "]"}], "]"}], ";"}], 
+   "\n"}]}]], "Input",
+ CellChangeTimes->{{3.957531459646078*^9, 3.957531459647091*^9}},
+ CellLabel->
+  "In[181]:=",ExpressionUUID->"6a31a6ec-ae40-3344-af04-e54505639b48"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Liczba nieekwiwalentnych kolorowa\:0144: \"\>", 
+   "\[InvisibleSpace]", "23"}],
+  SequenceForm["Liczba nieekwiwalentnych kolorowa\:0144: ", 23],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9575314609509735`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"c19139bc-110b-7b49-abfb-d7a4f7a9f041"],
+
+Cell[BoxData["\<\"Reprezentanci orbity (posortowani wed\[LSlash]ug liczby \
+jedynek):\"\>"], "Print",
+ CellChangeTimes->{3.957531460970127*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"32049e4a-f417-c64b-a155-1c85eae3ff86"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.957531460977167*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"43e2deb6-d1f3-0d49-8831-9ed799b94f84"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314609841957`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"b72d6085-190b-684b-8e9c-ae343fb5b6d0"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314609887123`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"278a2ccc-deaa-474c-bfd1-2b51dc99a430"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314609932423`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"4057bb00-a505-ab45-ac09-501c711cbdda"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "1", ",", "0", ",", "0"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314609982643`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"14e4d6bd-4a43-574e-a119-9fd1be19a2a9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314610027847`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"194b238d-4cbf-3642-b2b0-af86a72827a5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "1", ",", "0", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314610092907`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"b781157f-6fcf-f344-8312-1db026edcb16"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "0", ",", "1", ",", "0"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.957531461014303*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"9df623ce-5708-ee4f-af87-6bb5f02082b9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314610198307`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"d1bd6657-73d0-1441-86bc-27ef7ee7c7a1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314610243015`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"7e08d497-6b90-584f-8be2-e08301adbd47"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "0", ",", "1", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314610288258`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"2de95a4c-ec40-2c41-9124-db6b7b806b1c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "0", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.957531461034361*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"b0bc45c3-32e8-2345-8225-a1596ea6f475"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314610398884`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"1d17f00b-8bd6-0945-a846-23a6baa67609"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "0"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.957531461044409*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"fd4b2b8f-eaae-7e4b-a4a5-51e8c681577a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", "0", ",", "1", ",", "0"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314610494614`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"76cd313d-6da2-8e4f-a84c-fd00a023e370"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.957531461053982*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"3d28b0ca-af94-a943-904d-3df08944f1c6"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314610579815`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"1d5f8d6c-efd2-144f-911f-c4215ef6d440"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", "0", ",", "1", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.957531461062504*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"c7105e65-c628-d046-816f-81700c423a06"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.9575314610670395`*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"abe3908e-853c-104a-a4aa-954194c6b5dc"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.95753146107156*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"e0ef8751-2d92-d643-a02f-cd32ba98fb57"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.957531461076084*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"6cc5b49f-c5aa-5c42-9f6c-f1a729badd56"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.957531461081106*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"74425828-b654-bd49-812f-633f73d51f18"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1"}],
+   "}"}]], "Print",
+ CellChangeTimes->{3.957531461086136*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"9b014353-ff47-6d40-ba40-f5850466021b"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "1"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "2"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "3"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "4"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "5"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )]},
+    {
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "6"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "7"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "8"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "9"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "10"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )]},
+    {
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "11"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "12"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "13"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "14"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "15"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )]},
+    {
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "16"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "17"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "18"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "19"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "20"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )]},
+    {
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "21"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[1, 0, 0], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "22"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], 
+     TemplateBox[{
+       Graphics3DBox[{{
+          Opacity[0.1], 
+          GrayLevel[0.5], {
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, 1, -1}, {-1, 1, -1}}], 
+           Polygon3DBox[{{-1, -1, 1}, {1, -1, 1}, {1, 1, 1}, {-1, 1, 1}}], 
+           Polygon3DBox[{{-1, -1, -1}, {1, -1, -1}, {1, -1, 1}, {-1, -1, 1}}], 
+           Polygon3DBox[{{1, -1, -1}, {1, 1, -1}, {1, 1, 1}, {1, -1, 1}}], 
+           Polygon3DBox[{{1, 1, -1}, {-1, 1, -1}, {-1, 1, 1}, {1, 1, 1}}], 
+           
+           Polygon3DBox[{{-1, 1, -1}, {-1, -1, -1}, {-1, -1, 1}, {-1, 1, 
+            1}}]}}, {
+          GrayLevel[0.5], 
+          Thickness[0.005], {
+           Line3DBox[{{-1, -1, -1}, {1, -1, -1}}], 
+           Line3DBox[{{1, -1, -1}, {1, 1, -1}}], 
+           Line3DBox[{{1, 1, -1}, {-1, 1, -1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, -1, -1}}], 
+           Line3DBox[{{-1, -1, 1}, {1, -1, 1}}], 
+           Line3DBox[{{1, -1, 1}, {1, 1, 1}}], 
+           Line3DBox[{{1, 1, 1}, {-1, 1, 1}}], 
+           Line3DBox[{{-1, 1, 1}, {-1, -1, 1}}], 
+           Line3DBox[{{-1, -1, -1}, {-1, -1, 1}}], 
+           Line3DBox[{{1, -1, -1}, {1, -1, 1}}], 
+           Line3DBox[{{1, 1, -1}, {1, 1, 1}}], 
+           Line3DBox[{{-1, 1, -1}, {-1, 1, 1}}]}}, {{
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, -1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, -1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{1, 1, 1}, 0.15]}, {
+           RGBColor[0, 0, 1], 
+           Specularity[
+            GrayLevel[1], 50], 
+           SphereBox[{-1, 1, 1}, 0.15]}}}, Boxed -> False, Lighting -> 
+        "Neutral", ViewPoint -> {1.3, -2.4, 1.5}, ImageSize -> 150], 
+       TemplateBox[{"\"Kolorowanie \"", "23"}, "RowDefault"]},
+      "Labeled",
+      DisplayFunction->(GridBox[{{
+          TagBox[
+           ItemBox[
+            PaneBox[
+             TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline},
+              BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+           "SkipImageSizeLevel"]}, {
+          ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+        AutoDelete -> False, 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+        BaselinePosition -> {1, 1}]& ),
+      InterpretationFunction->(RowBox[{"Labeled", "[", 
+         RowBox[{#, ",", #2, ",", "Bottom", ",", 
+           RowBox[{"{", "}"}]}], "]"}]& )], "", ""}
+   },
+   AutoDelete->False,
+   FrameStyle->GrayLevel[0.85],
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Print",
+ CellChangeTimes->{3.957531461259243*^9},
+ CellLabel->
+  "During evaluation of \
+In[181]:=",ExpressionUUID->"58642da3-d8d1-524b-8b16-050eed18dafb"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 1011.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+Magnification:>0.9 Inherited,
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"4934c691-f8be-934c-a7eb-0ec5f5d6e724"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 15429, 417, 1232, "Input",ExpressionUUID->"6a31a6ec-ae40-3344-af04-e54505639b48"],
+Cell[CellGroupData[{
+Cell[16030, 443, 374, 9, 19, "Print",ExpressionUUID->"c19139bc-110b-7b49-abfb-d7a4f7a9f041"],
+Cell[16407, 454, 249, 5, 19, "Print",ExpressionUUID->"32049e4a-f417-c64b-a155-1c85eae3ff86"],
+Cell[16659, 461, 286, 8, 19, "Print",ExpressionUUID->"43e2deb6-d1f3-0d49-8831-9ed799b94f84"],
+Cell[16948, 471, 288, 8, 19, "Print",ExpressionUUID->"b72d6085-190b-684b-8e9c-ae343fb5b6d0"],
+Cell[17239, 481, 288, 8, 19, "Print",ExpressionUUID->"278a2ccc-deaa-474c-bfd1-2b51dc99a430"],
+Cell[17530, 491, 288, 8, 19, "Print",ExpressionUUID->"4057bb00-a505-ab45-ac09-501c711cbdda"],
+Cell[17821, 501, 288, 8, 19, "Print",ExpressionUUID->"14e4d6bd-4a43-574e-a119-9fd1be19a2a9"],
+Cell[18112, 511, 288, 8, 19, "Print",ExpressionUUID->"194b238d-4cbf-3642-b2b0-af86a72827a5"],
+Cell[18403, 521, 288, 8, 19, "Print",ExpressionUUID->"b781157f-6fcf-f344-8312-1db026edcb16"],
+Cell[18694, 531, 286, 8, 19, "Print",ExpressionUUID->"9df623ce-5708-ee4f-af87-6bb5f02082b9"],
+Cell[18983, 541, 288, 8, 19, "Print",ExpressionUUID->"d1bd6657-73d0-1441-86bc-27ef7ee7c7a1"],
+Cell[19274, 551, 288, 8, 19, "Print",ExpressionUUID->"7e08d497-6b90-584f-8be2-e08301adbd47"],
+Cell[19565, 561, 288, 8, 19, "Print",ExpressionUUID->"2de95a4c-ec40-2c41-9124-db6b7b806b1c"],
+Cell[19856, 571, 286, 8, 19, "Print",ExpressionUUID->"b0bc45c3-32e8-2345-8225-a1596ea6f475"],
+Cell[20145, 581, 288, 8, 19, "Print",ExpressionUUID->"1d17f00b-8bd6-0945-a846-23a6baa67609"],
+Cell[20436, 591, 286, 8, 19, "Print",ExpressionUUID->"fd4b2b8f-eaae-7e4b-a4a5-51e8c681577a"],
+Cell[20725, 601, 288, 8, 19, "Print",ExpressionUUID->"76cd313d-6da2-8e4f-a84c-fd00a023e370"],
+Cell[21016, 611, 286, 8, 19, "Print",ExpressionUUID->"3d28b0ca-af94-a943-904d-3df08944f1c6"],
+Cell[21305, 621, 288, 8, 19, "Print",ExpressionUUID->"1d5f8d6c-efd2-144f-911f-c4215ef6d440"],
+Cell[21596, 631, 286, 8, 19, "Print",ExpressionUUID->"c7105e65-c628-d046-816f-81700c423a06"],
+Cell[21885, 641, 288, 8, 19, "Print",ExpressionUUID->"abe3908e-853c-104a-a4aa-954194c6b5dc"],
+Cell[22176, 651, 285, 8, 19, "Print",ExpressionUUID->"e0ef8751-2d92-d643-a02f-cd32ba98fb57"],
+Cell[22464, 661, 286, 8, 19, "Print",ExpressionUUID->"6cc5b49f-c5aa-5c42-9f6c-f1a729badd56"],
+Cell[22753, 671, 286, 8, 19, "Print",ExpressionUUID->"74425828-b654-bd49-812f-633f73d51f18"],
+Cell[23042, 681, 286, 8, 19, "Print",ExpressionUUID->"9b014353-ff47-6d40-ba40-f5850466021b"],
+Cell[23331, 691, 74440, 1787, 779, "Print",ExpressionUUID->"58642da3-d8d1-524b-8b16-050eed18dafb"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
