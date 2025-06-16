@@ -1,0 +1,15 @@
+ID: 1
+Imie i nazwisko: Jan Kowalski
+Wynagrodzenie: 4500.50
+Ocena okresowa: Bardzo dobry pracownik, zaangazowany w projekty.
+---------------------------------
+ID: 2
+Imie i nazwisko: Anna Nowak
+Wynagrodzenie: 5200.75
+Ocena okresowa: Doskonałe umiejetnosci komunikacyjne, zawsze na czas.
+---------------------------------
+ID: 3
+Imie i nazwisko: Piotr Zielinski
+Wynagrodzenie: 3890.00
+Ocena okresowa: Potrzebuje poprawy w zakresie punktualnosci.
+---------------------------------

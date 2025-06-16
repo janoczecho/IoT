@@ -1,0 +1,19 @@
+A:1
+A:2
+A:3
+A:4
+A:1,2
+A:2,3
+A:1,4
+Print
+R:2,3
+R:3
+Print
+Save graf_test
+Dump graf_test
+A:1,4
+R:5,7
+Print
+Save final_graph
+Dump final_graph
+Exit

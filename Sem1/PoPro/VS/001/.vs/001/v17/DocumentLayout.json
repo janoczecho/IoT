@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jczec\\Desktop\\Studia IoT\\PoPro\\VS\\001\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E66F03D7-77A0-4F66-B151-97574718F452}|Project1\\Project1.vcxproj|C:\\Users\\jczec\\Desktop\\Studia IoT\\PoPro\\VS\\001\\Project1\\001.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E66F03D7-77A0-4F66-B151-97574718F452}|Project1\\Project1.vcxproj|solutionrelative:Project1\\001.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "001.c",
+              "DocumentMoniker": "C:\\Users\\jczec\\Desktop\\Studia IoT\\PoPro\\VS\\001\\Project1\\001.c",
+              "RelativeDocumentMoniker": "Project1\\001.c",
+              "ToolTip": "C:\\Users\\jczec\\Desktop\\Studia IoT\\PoPro\\VS\\001\\Project1\\001.c",
+              "RelativeToolTip": "Project1\\001.c",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAiwCkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-10-10T11:26:23.485Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

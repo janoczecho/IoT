@@ -1,0 +1,5 @@
+Imie 	 Wiek
+--------------
+Janek 	 19
+Maria 	 15
+Julka 	 20
