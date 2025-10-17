@@ -1,0 +1,5 @@
+# Ignore audio files
+*.mp3
+
+# Ignore Xournal++ files
+*.xopp
